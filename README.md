@@ -4,11 +4,11 @@ Carnegie Mellon University, School of Architecture <br>
 Generative Systems for Design, Fall '19 <br>
 Assignment 3: from rule-based to agent-based modeling
 
-Project team: <br>!
+Project team: <br>
 Michael Stesney <br>
 Aprameya Pandit <br>
 
-[solar4](https://user-images.githubusercontent.com/27044210/121946397-1d52c080-cd12-11eb-985e-106e7f2aac82.jpg)
+<img src="https://user-images.githubusercontent.com/27044210/121946397-1d52c080-cd12-11eb-985e-106e7f2aac82.jpg" alt="Operable shade states" width="500" />
 
 ### Project description
 Our model uses the behavior of a forest fire CA to open and close sunshade elements on the Hunt Library facades. Each sunshade on the façade maps to a cell in the same relative location within the CA matrix. Each cell has three discrete states, 0, 1 or 2, representing barren, treed or on fire, respectively. On the façade a cell state of 0 creates a 50% open sunshade, a cell state of 1 creates a 100% open sunshade and a cell state of 2 closes the sunshade completely. The shading device position obviously cannot change instantaneously. To translate between a discrete computational state and a physical movement that requires time, the CA cell matrix is not updated on every computational loop. Consequently, if a cell state change initiates a new sunshade position, the shade has time to move into position before the cell matrix is evaluated again.
