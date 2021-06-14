@@ -1,3 +1,4 @@
+
 # ca-facade
 
 Carnegie Mellon University, School of Architecture <br>
@@ -15,6 +16,22 @@ The CA initiates with a random distribution of treed and barren cells. However, 
 
 The façade interacts with the environment by responding to solar radiation striking individual cell locations. To translate radiation quantity, a "combustibility" attribute was added to the cell definition. The combustibility of a cell is directly proportional to the solar radiation impacting it. Higher combustibility increases the likelihood that a treed cell will ignite from a lightning strike or an adjacent burning cell. It also reduces the chance that a burning cell will extinguish. CA behavior involving more burning and barren cells will close more sunshades and increase overall façade shading. Conversely, at night, combustibility will be low, limiting the spread of lighting strike fires and resulting in a façade with limited shading.
 
+[![24 hour video](https://img.youtube.com/vi/dhF0Qo9f8eE/0.jpg)](https://youtu.be/dhF0Qo9f8eE)
+
+### Use of the model
+For the sake of this exercise, it is assumed that a future user will not want to create a new interactive façade for the Hunt Library and will have model geometry to import. As mentioned above in this report, for the emergent patterns of a forest fire CA to be evident, a large quantity of cells is required. A user should start by subdividing their geometry into the maximum number of cells that work with the architectural order of the façade.
+
+Next a user should determine the desired average position of the sunshades on an average day. The probability and combustibility variables are adjusted to achieve this. The current state display in the model is helpful for evaluating adjustments. The state values available to be displayed within the cells are also helpful. The timing of state change and speed of transition between positions is adjusted with the delay variable. A user can adjust the transition from barely perceptible to easily noticeable. However, the cycle of transitions will impact the progression of the emergent patterns and by extension the ability of those patterns to respond to changing solar radiation levels.
+
+Finally, a user must decide how much the varied solar radiation striking the facade throughout the day will guide the behavior of the CA. This is controlled with the cell combustibility thresholds. Of the possible user inputs, the probability values that control the state transition will be the most difficult to adjust well. Because all user adjustments are interrelated, trial and error will be unavoidable.
+
+### Code
+
+To run the code in Grasshopper, copy the Python file into its own GhPython Grasshopper component.
+
+<img src="https://user-images.githubusercontent.com/27044210/121967388-83990c80-cd2d-11eb-92a0-454a6608f7a7.png" alt="Graph" width="500" />
+
+### Images
 <img src="https://user-images.githubusercontent.com/27044210/121947788-b209ee00-cd13-11eb-944e-cea758e183cd.jpg" alt="Perspectives" width="500" />
 
 Perspectives
@@ -23,17 +40,9 @@ Perspectives
 
 Forest fire CA rendering
 
-<img src="https://user-images.githubusercontent.com/27044210/121947766-ac140d00-cd13-11eb-90d5-401aecd748fc.jpg" alt="Forest fire CA rendering" width="500" />
+<img src="https://user-images.githubusercontent.com/27044210/121947766-ac140d00-cd13-11eb-90d5-401aecd748fc.jpg" alt="Opacity / transparency states" width="500" />
 
-Forest fire CA rendering
+Opacity / transparency states
 
 <img src="https://user-images.githubusercontent.com/27044210/121946397-1d52c080-cd12-11eb-985e-106e7f2aac82.jpg" alt="Operable shade states" width="500" />
 
-Operable shade states
-
-### Use of the model
-For the sake of this exercise, it is assumed that a future user will not want to create a new interactive façade for the Hunt Library and will have model geometry to import. As mentioned above in this report, for the emergent patterns of a forest fire CA to be evident, a large quantity of cells is required. A user should start by subdividing their geometry into the maximum number of cells that work with the architectural order of the façade.
-
-Next a user should determine the desired average position of the sunshades on an average day. The probability and combustibility variables are adjusted to achieve this. The current state display in the model is helpful for evaluating adjustments. The state values available to be displayed within the cells are also helpful. The timing of state change and speed of transition between positions is adjusted with the delay variable. A user can adjust the transition from barely perceptible to easily noticeable. However, the cycle of transitions will impact the progression of the emergent patterns and by extension the ability of those patterns to respond to changing solar radiation levels.
-
-Finally, a user must decide how much the varied solar radiation striking the facade throughout the day will guide the behavior of the CA. This is controlled with the cell combustibility thresholds. Of the possible user inputs, the probability values that control the state transition will be the most difficult to adjust well. Because all user adjustments are interrelated, trial and error will be unavoidable.
